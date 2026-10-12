@@ -1,0 +1,60 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './Header.scss';
+@use './Banner.scss';
+@use './Categories.scss';
+@use './Produtos.scss';
+@use './Parceiros.scss';
+@use './Marcas.scss';
+@use './Newsletter.scss';
+@use './Footer.scss';
+@use './Modal.scss';
+@use './CartDrawer.scss';
+
+// Base Resets & Global Typography
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: $font-family;
+  color: $color-text-main;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+// App shell
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}

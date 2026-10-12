@@ -1,0 +1,6 @@
+{
+  "name": "Econverse - Teste Front-End Jr",
+  "description": "Landing page de e-commerce e vitrine de produtos desenvolvida com React, TypeScript e Sass para o desafio técnico Econverse.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

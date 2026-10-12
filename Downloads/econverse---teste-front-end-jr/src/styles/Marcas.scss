@@ -1,0 +1,128 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.marcas-section {
+  width: 100%;
+  padding: 48px 0;
+  background-color: #FFFFFF;
+
+  .marcas-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+    position: relative;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: $color-primary;
+    text-align: center;
+    margin: 0 0 36px 0;
+
+    @include tablet {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .marcas-list-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .marcas-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 16px 8px 24px;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+    }
+  }
+
+  .marca-circle {
+    width: 211px;
+    height: 211px;
+    min-width: 211px;
+    background: #FFFFFF;
+    border-radius: $radius-full;
+    box-shadow: $shadow-circle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+
+    @include tablet {
+      width: 160px;
+      height: 160px;
+      min-width: 160px;
+    }
+
+    @include mobile {
+      width: 120px;
+      height: 120px;
+      min-width: 120px;
+    }
+
+    img, svg {
+      max-width: 70%;
+      max-height: 40%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.16);
+      border-color: rgba(247, 25, 99, 0.2);
+
+      img, svg {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  .marcas-nav-button {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-full;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3F3F40;
+    transition: all 0.2s ease;
+    z-index: 10;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      color: #FFFFFF;
+      transform: translateY(-50%) scale(1.06);
+    }
+  }
+}

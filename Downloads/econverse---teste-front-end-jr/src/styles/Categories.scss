@@ -1,0 +1,118 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.categories-section {
+  width: 100%;
+  padding: 36px 0 24px;
+  background-color: #FFFFFF;
+
+  .categories-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include desktop {
+      overflow-x: auto;
+      padding-bottom: 12px;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #DDD;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    text-align: center;
+    width: 128px;
+
+    @include mobile {
+      width: 100px;
+    }
+
+    .icon-box {
+      width: 128px;
+      height: 128px;
+      background: $color-bg-light;
+      border-radius: $radius-lg;
+      box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      transition: all 0.25s ease;
+
+      @include mobile {
+        width: 90px;
+        height: 90px;
+      }
+
+      img, svg {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        transition: transform 0.25s ease;
+
+        @include mobile {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: $color-text-gray;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    &:hover {
+      .icon-box {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      span {
+        color: $color-primary;
+      }
+    }
+
+    &.active {
+      .icon-box {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 14px rgba(247, 25, 99, 0.2);
+        border: 1px solid rgba(247, 25, 99, 0.3);
+
+        img, svg {
+          transform: scale(1.05);
+        }
+      }
+
+      span {
+        color: $color-primary;
+        font-weight: 600;
+      }
+    }
+  }
+}
